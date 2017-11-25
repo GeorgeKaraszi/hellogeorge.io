@@ -1,4 +1,3 @@
-@import '../../../node_modules/lesshat/lesshat';
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab|Comfortaa');
 
 .timeline {
@@ -8,8 +7,8 @@
 
   /*==========  Basics  ==========*/
 
-  @body-background: #112c30;
-
+  // @body-background: #112c30;
+  @body-background: #474e5d;
   background: @body-background;
   margin: 0px;
   padding: 0px;
@@ -37,15 +36,16 @@
 
   /*==========  Sections  ==========*/
 
-  @header-background: #39acbd;
+  // @header-background: #39acbd;
+  @header-background: #A7D2CB;
+  @button-color: #494e6b;
   .header {
     text-align: center;
     position: relative;
-    z-index: 1;
     background-image: linear-gradient(
       to bottom,
-      lighten(@header-background, 15%) 0%,
-      @header-background 100%
+      lighten(@header-background, 5%) 10%,
+      @header-background 50%
     );
 
     .master-head {
@@ -73,16 +73,20 @@
       font-size: 20px;
       padding: 15px 20px 15px 20px;
       display: inline-block;
-      background: #3093a2; // rgba(0,0,0,.14)
+      background: @button-color;
+      border-radius: 10px;
+      border: 2px solid @button-color;
       cursor: pointer;
       .transition-duration(0.4s);
       .user-select(none);
 
       &:hover {
-        background: darken(#3093a2, 10%);
+        background: darken(@button-color, 10%);
+        border-color: darken(@button-color, 10%);
       }
       &:active {
-        background: darken(#3093a2, 20%);
+        background: darken(@button-color, 20%);
+        border-color: darken(@button-color, 20%);
       }
     }
   }
@@ -99,7 +103,7 @@
 
   .footer {
     background: @body-background;
-    padding: 100px 0px 100px 0px;
+    padding: 50px 0px 100px 0px;
     position: relative;
     z-index: 1;
 
@@ -139,8 +143,6 @@
     bottom: 0px;
     left: 50%;
 
-
-
     &.color-yellow .stem-background {
       background: #e9e566;
     }
@@ -174,14 +176,12 @@
     width: @stem-width;
     height: @stem-width; // Override with inline styling
     margin: 0px auto;
-    background: transparent
-      url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/22043/stem-mask.png)
-      repeat-y top center;
+    background: transparent url('../stem-mask.png') repeat-y top center;
   }
 
   .single-stem-icon.scroll-to-top {
     cursor: pointer;
-    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/22043/scroll-to-top-icon.png);
+    background-image: url('../scroll-to-top-icon.png');
   }
 
   /*==========  Post wrapper ==========*/
@@ -229,13 +229,14 @@
       }
 
       &.music-icon .stem-overlay .icon {
-        background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/22043/music-icon.png);
+        background-image: url('../code-icon.png');
       }
+
       &.bitbucket-icon .stem-overlay .icon {
         background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/22043/bitbucket-icon.png);
       }
       &.m-icon .stem-overlay .icon {
-        background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/22043/m-icon.png);
+        background-image: url('../date-icon.png');
       }
       &.twitter-icon .stem-overlay .icon {
         background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/22043/twitter-icon.png);
@@ -260,9 +261,15 @@
           bottom: 0px;
           left: 0px;
           right: 0px;
-          background: transparent
-            url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/22043/stem-mask.png)
-            repeat-y top center;
+
+          // background: transparent no-repeat center center;
+
+          // background-color: white;
+          background: transparent url('../stem-mask.png') repeat-y top center;
+        }
+
+        .stem-mast::before {
+          background-color: red;
         }
       }
 

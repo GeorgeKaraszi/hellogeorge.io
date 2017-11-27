@@ -20,7 +20,7 @@
       <div class="single-stem-icon scroll-to-top trigger-scroll-to-top"></div>
     </div>
 
-    <line-footer></line-footer>
+    <!-- <line-footer></line-footer> -->
     <!-- footer -->
   </div>
 </template>
@@ -29,6 +29,7 @@
 import LineHeader from './timeline/LineHeader';
 import LineElement from './timeline/LineElement';
 import LineFooter from './timeline/LineFooter';
+import LineContact from './timeline/LineContact';
 
 export default {
   name: 'timeline',
@@ -36,6 +37,7 @@ export default {
     LineElement,
     LineHeader,
     LineFooter,
+    LineContact,
   },
 
   data() {
@@ -47,19 +49,25 @@ export default {
           title: 'Test A',
           content: 'This is some kind of content',
           line_color: 'green',
-          line_icon: 'music-icon',
+          line_icon: 'chat-icon',
         },
         {
           title: 'Test B',
           content: 'This is some kind of content',
           line_color: 'green',
-          line_icon: 'm-icon',
+          line_icon: 'check-icon',
         },
         {
           title: 'Test C',
           content: 'This is some kind of content',
           line_color: 'green',
-          line_icon: 'music-icon',
+          line_icon: 'db-icon',
+        },
+        {
+          title: 'Test D',
+          content: 'This is some kind of content',
+          line_color: 'green',
+          line_icon: 'code-icon',
         },
       ],
     };
@@ -67,8 +75,6 @@ export default {
 };
 </script>
 
-<style lang="less">
-  .stem-wrapper{
-    // top: 200px !important;
-  }
+<style>
+
 </style>

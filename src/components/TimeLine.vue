@@ -20,7 +20,7 @@
       <div class="single-stem-icon scroll-to-top trigger-scroll-to-top"></div>
     </div>
 
-    <!-- <line-footer></line-footer> -->
+    <line-footer></line-footer>
     <!-- footer -->
   </div>
 </template>

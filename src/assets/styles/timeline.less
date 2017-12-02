@@ -37,7 +37,7 @@
   /*==========  Sections  ==========*/
 
   // @header-background: #39acbd;
-  @header-background: #A7D2CB;
+  @header-background: #a7d2cb;
   @button-color: #494e6b;
   .header {
     text-align: center;
@@ -143,13 +143,17 @@
     bottom: 0px;
     left: 50%;
 
-    &.color-yellow .stem-background {
+    &.default .stem-background {
+      background: @header-background;
+    }
+
+    &.yellow .stem-background {
       background: #e9e566;
     }
-    &.color-green .stem-background {
+    &.green .stem-background {
       background: #35c189;
     }
-    &.color-white .stem-background {
+    &.white .stem-background {
       background: #fff;
     }
 
@@ -228,7 +232,6 @@
         right: -110px;
       }
 
-
       // Timeline icons
 
       &.chat-icon .stem-overlay .icon {
@@ -270,15 +273,7 @@
           bottom: 0px;
           left: 0px;
           right: 0px;
-
-          // background: transparent no-repeat center center;
-
-          // background-color: white;
           background: transparent url('../stem-mask.svg') repeat-y top center;
-        }
-
-        .stem-mast::before {
-          background-color: red;
         }
       }
 
@@ -323,7 +318,6 @@
     .stem-padding,
     .single-stem-icon {
       margin: 0px;
-      float: left;
       margin-left: 50px;
     }
 

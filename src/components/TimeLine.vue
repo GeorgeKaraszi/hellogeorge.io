@@ -1,7 +1,7 @@
 <template>
   <div class="timeline">
-    <div class="stem-wrapper">
-      <div class="stem"></div>
+    <div class="stem-wrapper" v-bind:class="stem_color">
+      <div class="stem" id="scollingStem"></div>
       <div class="stem-background"></div>
     </div>
 
@@ -13,7 +13,7 @@
         <div class="stem-padding"></div>
 
         <div class="post-wrapper">
-          <line-element v-for="element in elements" v-bind:element="element" :key="element.index"></line-element>
+          <line-element v-on:set-stem-color="setStemColor" v-for="element in elements" v-bind:element="element" :key="element.index"></line-element>
           <!-- insert posts -->
         </div>
       </div>
@@ -39,28 +39,34 @@ export default {
     LineFooter,
     LineContact,
   },
+  methods: {
+    setStemColor(element) {
+      this.stem_color = element.line_color;
+    },
+  },
 
   data() {
     return {
       title: 'Project Road Map',
       ending_message: 'THATS IT YALL!',
+      stem_color: 'default',
       elements: [
         {
           title: 'Test A',
           content: 'This is some kind of content',
-          line_color: 'green',
+          line_color: 'default',
           line_icon: 'chat-icon',
         },
         {
           title: 'Test B',
           content: 'This is some kind of content',
-          line_color: 'green',
+          line_color: 'white',
           line_icon: 'check-icon',
         },
         {
           title: 'Test C',
           content: 'This is some kind of content',
-          line_color: 'green',
+          line_color: 'yellow',
           line_icon: 'db-icon',
         },
         {

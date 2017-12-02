@@ -1,5 +1,5 @@
 <template>
-  <article class="post" v-bind:class="element.line_icon">
+  <article class="post" v-bind:class="[element.line_icon, {active: isActive}]">
     <div class="stem-overlay">
       <div class="icon"></div>
       <div class="stem-mask"></div>
@@ -17,6 +17,28 @@
 <script>
 export default {
   props: ['element'],
+  data() {
+    return {
+      isActive: false,
+    };
+  },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      const halfScreen = window.innerHeight / 2;
+      const elementPos = this.$el.getClientRects()[0].y;
+      setTimeout(() => {
+        if (elementPos < halfScreen) {
+          this.isActive = true;
+          this.$emit('set-stem-color', this.element);
+        } else {
+          this.isActive = false;
+        }
+      }, 20);
+    },
+  },
 };
 </script>
 

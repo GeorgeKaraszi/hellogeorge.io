@@ -34,7 +34,7 @@ export default {
           description:
             'Implementing features as outline and discussed with the team.',
           color: 'light-green',
-          icon: 'fa fa-desktop',
+          icon: 'fa fa-code',
         },
         {
           title: 'Test Driven',

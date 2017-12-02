@@ -1,9 +1,12 @@
+@body-background: #474e5d;
 .footer-container {
   position: relative;
   text-align: center;
-  background: url(../footer.jpg) no-repeat center center;
-  background-attachment: fixed;
-  background-size: cover;
+  background-image: linear-gradient(
+    to bottom,
+    @body-background 10%,
+    darken(@body-background, 10%) 50%
+  );
   padding: 6em 0em;
 }
 
@@ -14,7 +17,6 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(64, 64, 64, 0.5);
 }
 
 #footer {
@@ -32,7 +34,6 @@
   top: -4.5em;
   left: 50%;
   height: 4.5em;
-  border-left: solid 1px #fff;
 }
 
 #footer a {
@@ -57,6 +58,7 @@
   border: solid 1px #fff;
   display: inline-block;
   margin: 0 0 3em 0;
+  background: rgba(39, 15, 15, 0.5);
 }
 
 #footer .copyright {
@@ -64,7 +66,14 @@
   font-size: 0.8em;
 }
 
+.foot-header {
+  display: inline-block;
+  position: relative;
+
+}
 .foot-header h3 {
-  color: white !important;
+  margin-top: 1em;
+  color: white;
   font-weight: bold;
+  line-height: 1;
 }

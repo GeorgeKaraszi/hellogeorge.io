@@ -1,7 +1,7 @@
 <template>
   <div class="timeline">
-    <div class="stem-wrapper">
-      <div class="stem"></div>
+    <div class="stem-wrapper" v-bind:class="stem_color">
+      <div class="stem" id="scollingStem"></div>
       <div class="stem-background"></div>
     </div>
 
@@ -13,7 +13,7 @@
         <div class="stem-padding"></div>
 
         <div class="post-wrapper">
-          <line-element v-for="element in elements" v-bind:element="element" :key="element.index"></line-element>
+          <line-element v-on:set-stem-color="setStemColor" v-for="element in elements" v-bind:element="element" :key="element.index"></line-element>
           <!-- insert posts -->
         </div>
       </div>
@@ -29,6 +29,7 @@
 import LineHeader from './timeline/LineHeader';
 import LineElement from './timeline/LineElement';
 import LineFooter from './timeline/LineFooter';
+import LineContact from './timeline/LineContact';
 
 export default {
   name: 'timeline',
@@ -36,30 +37,43 @@ export default {
     LineElement,
     LineHeader,
     LineFooter,
+    LineContact,
+  },
+  methods: {
+    setStemColor(element) {
+      this.stem_color = element.line_color;
+    },
   },
 
   data() {
     return {
       title: 'Project Road Map',
       ending_message: 'THATS IT YALL!',
+      stem_color: 'default',
       elements: [
         {
           title: 'Test A',
           content: 'This is some kind of content',
-          line_color: 'green',
-          line_icon: 'music-icon',
+          line_color: 'default',
+          line_icon: 'chat-icon',
         },
         {
           title: 'Test B',
           content: 'This is some kind of content',
-          line_color: 'green',
-          line_icon: 'm-icon',
+          line_color: 'white',
+          line_icon: 'check-icon',
         },
         {
           title: 'Test C',
           content: 'This is some kind of content',
+          line_color: 'yellow',
+          line_icon: 'db-icon',
+        },
+        {
+          title: 'Test D',
+          content: 'This is some kind of content',
           line_color: 'green',
-          line_icon: 'music-icon',
+          line_icon: 'code-icon',
         },
       ],
     };
@@ -67,8 +81,6 @@ export default {
 };
 </script>
 
-<style lang="less">
-  .stem-wrapper{
-    // top: 200px !important;
-  }
+<style>
+
 </style>

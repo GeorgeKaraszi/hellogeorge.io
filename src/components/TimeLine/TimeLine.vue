@@ -1,11 +1,12 @@
 <template>
   <div class="timeline">
-    <div class="stem-wrapper" v-bind:class="stem_color">
+    <modal-container v-if="activeModal" v-on:close-modal="closeModal" :modalComponent="component"></modal-container>
+    <div class="stem-wrapper" :class="stem_color">
       <div class="stem" id="scollingStem"></div>
       <div class="stem-background"></div>
     </div>
 
-    <line-header v-bind:title="title"></line-header>
+    <line-header :title="title"></line-header>
 
     <div class="section main-content">
       <div class="section-inner">
@@ -13,9 +14,10 @@
         <div class="stem-padding"></div>
 
         <div class="post-wrapper">
-          <line-element v-on:set-stem-color="setStemColor" v-for="element in elements" v-bind:element="element" :key="element.index"></line-element>
-          <!-- insert posts -->
+          <line-element v-on:set-stem-color="setStemColor" v-on:open-modal="openModal" v-for="element in elements" :element="element" :key="element.index">
+          </line-element>
         </div>
+        <!-- insert posts -->
       </div>
       <div class="single-stem-icon scroll-to-top trigger-scroll-to-top"></div>
     </div>
@@ -26,10 +28,11 @@
 </template>
 
 <script>
-import LineHeader from './timeline/LineHeader';
-import LineElement from './timeline/LineElement';
-import LineFooter from './timeline/LineFooter';
-import LineContact from './timeline/LineContact';
+import LineHeader from './LineHeader';
+import LineElement from './LineElement';
+import LineFooter from './LineFooter';
+import LineContact from './LineContact';
+import ModalContainer from '../ModalContainer/ModalContainer';
 
 export default {
   name: 'timeline',
@@ -38,10 +41,18 @@ export default {
     LineHeader,
     LineFooter,
     LineContact,
+    ModalContainer,
   },
   methods: {
     setStemColor(element) {
       this.stem_color = element.line_color;
+    },
+    openModal(element) {
+      this.component = element.modal;
+      this.activeModal = true;
+    },
+    closeModal() {
+      this.activeModal = false;
     },
   },
 
@@ -50,12 +61,15 @@ export default {
       title: 'Project Road Map',
       ending_message: 'THATS IT YALL!',
       stem_color: 'default',
+      activeModal: false,
+      component: '',
       elements: [
         {
           title: 'Test A',
           content: 'This is some kind of content',
           line_color: 'default',
           line_icon: 'chat-icon',
+          modal: 'test-modal',
         },
         {
           title: 'Test B',

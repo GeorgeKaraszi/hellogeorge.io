@@ -5,13 +5,9 @@
 </template>
 
 <script>
-import TimeLine from './components/TimeLine';
-
 export default {
   name: 'app',
-  components: {
-    TimeLine,
-  },
+  components: {},
 };
 </script>
 

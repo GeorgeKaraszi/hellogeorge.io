@@ -7,7 +7,7 @@
       <section id="footer">
         <ul class="icons">
           <li v-for="contact in contacts" :key="contact.link">
-            <a v-bind:href="[contact.link]" class="icon" v-bind:class="[contact.icon]">
+            <a :href="[contact.link]" class="icon" :class="[contact.icon]">
               <span class="label">{{contact.label}}</span>
             </a>
           </li>

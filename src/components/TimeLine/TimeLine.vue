@@ -1,6 +1,8 @@
 <template>
   <div class="timeline">
-    <modal-container v-if="activeModal" v-on:close-modal="closeModal" :modalComponent="component"></modal-container>
+    <transition name="fade">
+      <modal-container v-if="activeModal" v-on:close-modal="closeModal" :modalComponent="component"></modal-container>
+    </transition>
     <div class="stem-wrapper" :class="stem_color">
       <div class="stem" id="scollingStem"></div>
       <div class="stem-background"></div>
@@ -92,9 +94,28 @@ export default {
       ],
     };
   },
+  watch: {
+    activeModal: active => {
+      const className = 'modal-open';
+      if (active) {
+        document.body.classList.add(className);
+      } else {
+        document.body.classList.remove(className);
+      }
+    },
+  },
 };
 </script>
 
-<style>
+<style lang="less" scoped>
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.25s ease-in-out;
+}
 </style>
+

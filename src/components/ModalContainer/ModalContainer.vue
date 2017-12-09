@@ -1,15 +1,25 @@
 <template>
 
   <div class='modal-container'>
-    <header>
-      <h2>{{title}}</h2>
-      <h2>
-        <button v-on:click="close">CLOSE</button>
-      </h2>
-    </header>
-    <section>
-      <component :is="modalComponent"></component>
-    </section>
+    <div class='modal'>
+      <header class="head">
+        <div class="btn-close" v-on:click="close">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+      </header>
+      <!-- <header>
+        <h2>{{title}}</h2>
+        <h2>
+          <button v-on:click="close">CLOSE</button>
+        </h2>
+      </header> -->
+      <!-- <section>
+        <component :is="modalComponent"></component>
+      </section> -->
+      <section class="content">
+        <component :is="modalComponent"></component>
+      </section>
+    </div>
   </div>
 
   <!-- <div class="modal-header">
@@ -54,5 +64,44 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.modal-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(41, 171, 164, 0.8);
+  z-index: 1;
+}
 
+.modal {
+  width: 70%;
+  height: 60%;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  top: 50%;
+  background: #fff;
+  margin-top: -200px;
+  visibility: visible;
+}
+
+.btn-close {
+  font-size: 28px;
+  display: block;
+  float: right;
+  color: #fff;
+  cursor: pointer;
+}
+
+.head {
+  height: 32px;
+  padding: 12px 30px;
+  overflow: hidden;
+  background: #e2525c;
+}
+
+.content {
+  padding-top: 2px;
+}
 </style>

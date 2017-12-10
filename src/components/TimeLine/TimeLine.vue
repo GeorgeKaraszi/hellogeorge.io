@@ -1,6 +1,6 @@
 <template>
   <div class="timeline">
-    <transition name="fade">
+    <transition name="bounce">
       <modal-container v-if="activeModal" v-on:close-modal="closeModal" :modalComponent="component"></modal-container>
     </transition>
     <div class="stem-wrapper" :class="stem_color">
@@ -78,6 +78,7 @@ export default {
           content: 'This is some kind of content',
           line_color: 'white',
           line_icon: 'check-icon',
+          modal: 'next-modal',
         },
         {
           title: 'Test C',
@@ -115,7 +116,25 @@ export default {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 0.25s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.bounce-enter-active {
+  animation: bounce-in 0.4s;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.3s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 </style>
 

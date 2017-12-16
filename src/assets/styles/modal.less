@@ -1,0 +1,105 @@
+@header-background: #35c189;
+
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+
+.modal-container {
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: auto;
+  position: absolute;
+  margin-top: -15%;
+  margin-left: -25%;
+  border-radius: 20px;
+  background: #fff;
+
+  header {
+    position: relative;
+    display: block;
+    height: 32px;
+    padding: 12px 30px;
+    overflow: hidden;
+    background-image: linear-gradient(
+      to bottom,
+      darken(@header-background, 5%) 10%,
+      @header-background 80%
+    );
+    border-bottom: 5px solid darken(@header-background, 25%);
+
+    .title {
+      font-family: 'Comfortaa', cursive;
+      text-align: center;
+      font-size: 30px;
+      margin-top: 5px;
+      color: #fff;
+    }
+  }
+
+  article {
+    position: relative;
+    display: block;
+
+    .content {
+      padding-top: 2px;
+      margin-left: 10px;
+    }
+  }
+
+  footer {
+    position: relative;
+    display: none;
+
+    .close-button {
+      @button-color: #416dea;
+
+      height: 32px;
+      padding: 12px 30px;
+      overflow: hidden;
+
+      cursor: pointer;
+      transition: all 1s linear;
+      text-transform: capitalize;
+
+      color: #fff;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.3;
+      text-transform: uppercase;
+      overflow: hidden;
+
+      text-align: center;
+
+      color: #fff;
+      background: @button-color;
+
+      &:hover {
+        background: darken(@button-color, 10%);
+        border-color: darken(@button-color, 10%);
+      }
+
+      &:active {
+        background: darken(@button-color, 20%);
+        border-color: darken(@button-color, 20%);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1080px) {
+  .modal-container {
+    display: fixed;
+    top: 20%;
+    footer {
+      display: block;
+    }
+  }
+}

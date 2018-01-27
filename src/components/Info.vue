@@ -25,7 +25,7 @@ export default {
         {
           title: 'Feature Planning',
           description:
-            'Designing a roadmap for each part of system. Establishing feature priorities.',
+            'Designing a road map for each part of system. Establishing feature priorities.',
           color: 'light-blue',
           icon: 'fa fa-map-signs',
         },

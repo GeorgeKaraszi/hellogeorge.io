@@ -13,7 +13,7 @@
           </li>
         </ul>
         <div class="copyright">
-          George Protacio-Karaszi &copy; 2017
+          George Protacio-Karaszi &copy; 2018
         </div>
       </section>
     </div>

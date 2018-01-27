@@ -7,7 +7,7 @@
     <div class="container">
       <div class="process">
         <section class="box" v-for="process in processes" :key="process.title">
-          <i class="icon big rounded" v-bind:class="[process.color, process.icon]"></i>
+          <i class="icon big rounded" :class="[process.color, process.icon]"></i>
           <h3>{{ process.title }}</h3>
           <p>{{ process.description }}</p>
         </section>
@@ -25,7 +25,7 @@ export default {
         {
           title: 'Feature Planning',
           description:
-            'Designing a roadmap for each part of system. Establishing feature priorities.',
+            'Designing a road map for each part of system. Establishing feature priorities.',
           color: 'light-blue',
           icon: 'fa fa-map-signs',
         },

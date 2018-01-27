@@ -8,7 +8,7 @@
 
 <script>
 import Info from './Info';
-import TimeLine from './TimeLine';
+import TimeLine from './TimeLine/TimeLine';
 import ContactFooter from './ContactFooter';
 
 export default {
@@ -21,5 +21,8 @@ export default {
 </script>
 
 <style>
+body.modal-open {
+  overflow: hidden;
+}
 </style>
 

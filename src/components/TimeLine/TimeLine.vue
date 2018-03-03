@@ -1,5 +1,5 @@
 <template>
-  <div class="timeline">
+  <div class="timeline" id="timelineHeader">
     <transition name="bounce">
       <modal-container v-if="activeModal" v-on:close-modal="closeModal" :modalComponent="component"></modal-container>
     </transition>
@@ -21,7 +21,7 @@
         </div>
         <!-- insert posts -->
       </div>
-      <div class="single-stem-icon scroll-to-top trigger-scroll-to-top"></div>
+      <div class="single-stem-icon scroll-to-top trigger-scroll-to-top"  v-on:click="scrollToTop"></div>
     </div>
 
     <line-footer></line-footer>
@@ -46,6 +46,10 @@ export default {
     ModalContainer,
   },
   methods: {
+    scrollToTop() {
+      const target = document.getElementById('header');
+      this.$SmoothScroll(target, 1000);
+    },
     setStemColor(element) {
       this.stem_color = element.line_color;
     },
@@ -61,34 +65,35 @@ export default {
   data() {
     return {
       title: 'Project Road Map',
-      ending_message: 'THATS IT YALL!',
       stem_color: 'default',
       activeModal: false,
       component: '',
       elements: [
         {
           title: 'Discovery',
-          content: 'Talk with the client to better outline and articulate the problems they are facing. Maybe even discover new one\'s that where never discovered.',
+          content: 'Talk with the client to better outline and articulate the problems they are facing. During this phase I would ' +
+                   'also discuss outlying potential opportunities that will give better value to the clients brand.',
           line_color: 'default',
           line_icon: 'chat-icon',
-          modal: 'test-modal',
         },
         {
           title: 'Evaluation',
-          content: 'Walk through solutions with the client, creating feature stories and valid iterations.',
+          content: "After a clear problem statement has been established. I'll Walk through multiple iterative design and development steps " +
+                   'with the client and-or Project Manager. Creating and estimating development time for each broken down feature that contribute ' +
+                   'to the over-arching solution.',
           line_color: 'white',
           line_icon: 'check-icon',
-          modal: 'next-modal',
         },
         {
           title: 'Product Development',
-          content: 'For each iterative step, I work closely with the development team to create finalized solutions',
+          content: "For each iterative step, I work closely with both designer's and other developers to create a well-developed final solution",
           line_color: 'yellow',
           line_icon: 'code-icon',
         },
         {
           title: 'Deliverable',
-          content: 'Hold weekly walk through iterations with the client, to finalize each feature and to ensure it meet\'s their criteria.',
+          content: "Hold weekly walk through iterations with the client, to finalize each feature and to ensure it meet's their criteria. " +
+                   'This also involves conducting milestone releases on a week by week bases when appropriate.',
           line_color: 'green',
           line_icon: 'db-icon',
         },

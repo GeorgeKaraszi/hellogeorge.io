@@ -27,22 +27,22 @@ export default {
       contacts: [
         {
           link: 'https://www.linkedin.com/in/georgekaraszi',
-          icon: 'fa fa-linkedin',
+          icon: 'fab fa-linkedin',
           label: 'Linkedin',
         },
         {
           link: 'https://github.com/GeorgeKaraszi',
-          icon: 'fa fa-github',
+          icon: 'fab fa-github',
           label: 'Github',
         },
         {
           link: 'https://www.facebook.com/george.karaszi',
-          icon: 'fa fa-facebook',
+          icon: 'fab fa-facebook',
           label: 'Facebook',
         },
         {
           link: 'mailto:george@georgey.io',
-          icon: 'fa fa-envelope-o',
+          icon: 'far fa-envelope',
           label: 'Email',
         },
       ],

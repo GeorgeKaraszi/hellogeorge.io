@@ -4,7 +4,7 @@
 
       <div class="master-head">
         <h1 class="page-title">{{ title }}</h1>
-        <p class="scroll-button" onClick="$('.post-wrapper .post:first-child .stem-overlay .icon').click();">Ready to go for a ride?</p>
+        <p class="scroll-button" v-on:click="scrollToElement">Ready to go for a ride?</p>
       </div>
 
     </div>
@@ -15,6 +15,12 @@
 <script>
 export default {
   props: ['title'],
+  methods: {
+    scrollToElement() {
+      const target = document.getElementsByClassName('section-inner')[0];
+      this.$SmoothScroll(target, 1000);
+    },
+  },
 };
 </script>
 

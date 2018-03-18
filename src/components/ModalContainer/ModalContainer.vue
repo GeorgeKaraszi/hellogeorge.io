@@ -2,14 +2,14 @@
 
   <div class='modal' v-on:click="close" data-behavior="close">
     <div class='modal-container'>
-      <header>
+      <header v-if="showHeader === true">
         <div class="title">
           {{title}}
         </div>
       </header>
       <article class="content-container">
         <div class="content">
-          <component :is="modalComponent" v-on:set-content-background="setContentBackground"></component>
+          <component :is="modalComponent" v-on:set-content-background="setContentBackground" :componentParams="componentParams"></component>
         </div>
       </article>
       <footer>
@@ -23,12 +23,27 @@
 <script>
 import TestModal from './TestModal';
 import NextModal from './NextModal';
+import GalleryModal from './GalleryModal';
 
 export default {
-  props: ['modalComponent'],
+  props: {
+    modalComponent: {
+      type: String,
+      required: true,
+    },
+    showHeader: {
+      type: Boolean,
+      default: true,
+    },
+    componentParams: {
+      type: Object,
+      default: null,
+    }
+  },
   components: {
     TestModal,
     NextModal,
+    GalleryModal,
   },
   data() {
     return {

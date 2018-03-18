@@ -1,6 +1,14 @@
 <template>
 <div class="slider-container">
-
+<modal-container
+  v-if="activeModal"
+  v-on:close-modal="closeModal"
+  v-on:click-action="nextImage"
+  :modalComponent="component"
+  :componentParam="selectedImage"
+  :enableClickAction="true"
+  :showHeader="false">
+  </modal-container>
 <carousel-3d
   :width="512"
   :height="288"
@@ -11,7 +19,7 @@
   controls-prev-html="<p class='fas fa-angle-left'></p>"
   controlsNextHtml="<p class='fas fa-angle-right'></p>">
   <slide v-for="(image, index) in images" :key="image + index" :index="index">
-    <img :src="image">
+    <img :src="image" v-on:click="openLargeImage(image, index)">
   </slide>
 </carousel-3d>
     <div class="spacer"></div>
@@ -20,15 +28,53 @@
 
 <script>
 import { Carousel3d, Slide } from 'vue-carousel-3d';
+import ModalContainer from './ModalContainer/ModalContainer';
 
 export default {
   components: {
     Carousel3d,
     Slide,
+    ModalContainer,
+  },
+
+  methods: {
+    openLargeImage(image, index) {
+      this.activeModal   = true;
+      this.selectedImage = {
+        image: image,
+        index: index,
+      }
+    },
+
+    nextImage(index) {
+      const nextIndex = index % this.images.length
+
+      this.selectedImage = {
+        image: this.images[nextIndex],
+        index: nextIndex,
+      }
+    },
+    closeModal() {
+      this.activeModal = false;
+    },
+  },
+
+  watch: {
+    activeModal: active => {
+      const className = 'modal-open';
+      if (active) {
+        document.body.classList.add(className);
+      } else {
+        document.body.classList.remove(className);
+      }
+    },
   },
 
   data() {
     return {
+      activeModal: false,
+      component: 'gallery-modal',
+      selectedImage: {},
       images: [
         'static/placeholder.png',
         'static/placeholder.png',

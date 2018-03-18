@@ -62,7 +62,7 @@
 
   /* For screen bigger than 800px */
 
-  @media (min-width: 50em) {
+  @media (min-width: 30em) {
     /* Transforms the list into a horizontal navigation */
     .nav li {
       float: left;
@@ -75,7 +75,7 @@
     }
     /* Placing the icon */
     .icon {
-      margin-top: 0.7em;
+      // margin-top: 0.7em;
       padding-left: 0.5em;
     }
     /* Making the text follow the height animation */
@@ -93,22 +93,31 @@
     }
   }
 
-  @media (min-width: 50em) and (max-width: 61.25em) {
+  @media (min-width: 20em) and (max-width: 61.25em) {
     /* Size and font adjustments to make it fit into the screen*/
     .nav ul {
-      font-size: 1.5em;
+      font-size: 2.5em;
+    }
+
+    .nav li {
+      width: 400px;
     }
   }
 
-  /* Adapting the font size and width for smaller screns*/
+  // /* Adapting the font size and width for smaller screns*/
 
   @media (min-width: 32.5em) and (max-width: 38.688em) {
     .nav li span.icon {
       width: 50%;
     }
-    .nav li .icon + span {
-      font-size: 0.9em;
-    }
+
+  // //   .nav li {
+  // //     min-width: 500px;
+  // //   }
+
+  // //   .nav li .icon + span {
+  // //     font-size: 2em;
+  // //   }
   }
 
   /* Styling the toggle menu link and hiding it */
@@ -118,6 +127,18 @@
     .nav li span {
       display: inline-block;
       height: 100%;
+    }
+
+    .row .nav {
+      margin-left: -5em;
+
+      li {
+        max-width: 350px;
+      }
+    }
+
+    .nav li {
+      max-width: 400px;
     }
     .nav a {
       padding: 0.5em;

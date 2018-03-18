@@ -1,9 +1,6 @@
 <template>
   <div class="footer-container">
     <div class="footer-wrapper">
-      <!-- <section class="foot-header">
-        <h3>Get In contact with me</h3>
-      </section> -->
       <section id="footer">
         <ul class="icons">
           <li v-for="contact in contacts" :key="contact.link">

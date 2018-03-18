@@ -87,6 +87,10 @@ export default {
   cursor: pointer;
 }
 
+.intro h1 {
+  text-transform: none;
+}
+
 .row {
   padding-right: 15px;
   padding-left: 15px;
@@ -112,19 +116,29 @@ export default {
   .intro .name {
     font-weight: 600;
   }
-  .intro .intro-text {
-    max-width: 75%;
-  }
   .intro .intro-text p {
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
-    // margin-bottom: 40px;
-    // margin-top: 20px;
   }
   .row {
     min-height: 550px;
     padding-top: 300px;
     padding-bottom: 200px;
   }
+}
+
+@media  (max-width: 768px) {
+
+  .intro {
+    text-align: left;
+  }
+
+  .intro-text, .intro .name {
+    max-width: 100%;
+    padding: 0px;
+    margin: 0px;
+
+  }
+
 }
 </style>

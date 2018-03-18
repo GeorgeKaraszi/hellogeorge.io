@@ -1,8 +1,16 @@
 <template>
 <div class="slider-container">
 
-<carousel-3d width="512" height="512" perspective="30" inverseScaling="200" display="8">
-  <slide v-for="(image, index) in images" :key="image" :index="index">
+<carousel-3d
+  :width="512"
+  :height="288"
+  :perspective="30"
+  :inverseScaling="200"
+  :display="8"
+  :controlsVisible="true"
+  controls-prev-html="<p class='fas fa-angle-left'></p>"
+  controlsNextHtml="<p class='fas fa-angle-right'></p>">
+  <slide v-for="(image, index) in images" :key="image + index" :index="index">
     <img :src="image">
   </slide>
 </carousel-3d>

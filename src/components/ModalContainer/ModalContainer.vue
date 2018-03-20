@@ -9,7 +9,7 @@
       </header>
       <article class="content-container">
         <div class="content">
-          <component :is="modalComponent" v-on:set-content-background="setContentBackground" :componentParams="componentParams"></component>
+          <component :is="modalComponent" v-on:set-content-background="setContentBackground" :componentParam="componentParam"></component>
         </div>
       </article>
       <footer>
@@ -35,7 +35,7 @@ export default {
       type: Boolean,
       default: true,
     },
-    componentParams: {
+    componentParam: {
       type: Object,
       default: null,
     }

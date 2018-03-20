@@ -77,7 +77,7 @@ export default {
       selectedImage: {},
       images: [
         'static/placeholder.png',
-        'static/placeholder.png',
+        'static/image.jpg',
         'static/placeholder.png',
         'static/placeholder.png',
         'static/placeholder.png',
@@ -107,5 +107,3 @@ export default {
   min-height: 30px;
 }
 </style>
-
-

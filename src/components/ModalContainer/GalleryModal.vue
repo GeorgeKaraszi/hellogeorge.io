@@ -31,10 +31,4 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  img {
-    padding-top: 5px;
-    padding-left: 2px;
-    max-width:98%;
-    max-height:95%;
-  }
 </style>

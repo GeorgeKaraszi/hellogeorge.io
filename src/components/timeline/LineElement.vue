@@ -1,5 +1,5 @@
 <template>
-  <article class="post" :class="[element.line_icon, {active: isActive}]">
+  <article class="post" :class="[element.line_icon, {active: isActive}]" data-behavior="process:post">
     <div class="stem-overlay">
       <div class="icon"></div>
       <div class="stem-mask"></div>

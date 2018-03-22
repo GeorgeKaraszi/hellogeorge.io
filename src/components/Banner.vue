@@ -40,7 +40,7 @@ export default {
     scrollToFooter(element) {
       if (element.action != null) {
         const target = document.getElementById(element.action);
-        this.$SmoothScroll(target, 1000);
+        this.$SmoothScroll(target, 3000);
       }
     },
   },

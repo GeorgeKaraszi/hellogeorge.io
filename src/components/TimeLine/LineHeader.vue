@@ -16,11 +16,21 @@
 export default {
   props: ['title'],
   methods: {
-    scrollToElement() {
-      const target = document.getElementsByClassName('section-inner')[0];
+    smoothScrollElement(target) {
       this.$SmoothScroll(target, 1000);
+    },
+    scrollToElement() {
+      const targets = document.querySelectorAll("[data-behavior='process:post']");
+      this.$SmoothScroll(targets[0], 1000);
+
+      for(var i = 0; i < targets.length; i++) {
+        (function(ind, target, smoothScroll) {
+          setTimeout(function(){
+              smoothScroll(target, 1000);
+          }, 5000 * ind);
+        })(i, targets[i], this.$SmoothScroll);
+      }
     },
   },
 };
 </script>
-

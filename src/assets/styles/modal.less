@@ -14,13 +14,8 @@
   left: 100px;
   bottom: 100px;
   right: 100px;
-  // width: auto;
-  // height: auto;
-  // max-width: 70%;
   position: absolute;
-  // margin-top: -20%;
-  // margin-left: -25%;
-  border-radius: 20px;
+  border-radius: 20px 20px 0 0;
   background: #fff;
 
   div, article {
@@ -34,7 +29,6 @@
     padding: 5px 0;
   }
   img {
-    // display: block;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -42,10 +36,6 @@
     max-height: 100%;
     max-width: 100%;
     margin: auto;
-    // height: 90vh;
-    // width: 100%;
-    // margin-top: 10px;
-    // margin-bottom: 10px;
   }
 
   header {
@@ -82,8 +72,11 @@
   }
 
   footer {
-    position: relative;
-    display: none;
+    position: absolute;
+
+    bottom: 5px;
+    width: 100%;
+
 
     .close-button {
       @button-color: #416dea;
@@ -130,7 +123,7 @@
     bottom: 10px;
     right: 10px;
     footer {
-      display: block;
+      bottom: 45px;
     }
   }
 }

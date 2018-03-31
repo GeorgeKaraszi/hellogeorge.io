@@ -12,14 +12,38 @@
             </div>
             <nav id="menu" class="nav">
               <ul>
-                <li v-for="contact in contacts" :key="contact.link">
-                  <a :href="contact.action ? null : [contact.link]"  v-on:click="scrollToFooter(contact)" class="social-intro;">
+                <li>
+                  <a href="#" v-on:click="scrollToFooter()" class="social-intro;">
                     <span class="icon">
-                      <i aria-hidden="true" :class="[contact.icon]">
-                        <span class="label">{{contact.label}}</span>
+                      <i aria-hidden="true" class="far fa-comments">
+                        <span class="label">Social</span>
                       </i>
                       <span aria-hidden="true" class="icon-message">
-                        {{contact.label}}
+                        Social
+                      </span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <router-link to="/resume" class="social-intro;">
+                    <span class="icon">
+                      <i aria-hidden="true" class="far fa-user">
+                        <span class="label">Resume</span>
+                      </i>
+                      <span aria-hidden="true" class="icon-message">
+                        Resume
+                      </span>
+                    </span>
+                  </router-link>
+                </li>
+                <li>
+                  <a href="mailto:george@georgey.io" class="social-intro;">
+                    <span class="icon">
+                      <i aria-hidden="true" class="far fa-envelope-open">
+                        <span class="label">Email Me</span>
+                      </i>
+                      <span aria-hidden="true" class="icon-message">
+                        Email Me
                       </span>
                     </span>
                   </a>
@@ -37,33 +61,10 @@
 <script>
 export default {
   methods: {
-    scrollToFooter(element) {
-      if (element.action != null) {
-        const target = document.getElementById(element.action);
-        this.$SmoothScroll(target, 3000);
-      }
+    scrollToFooter() {
+      const target = document.getElementById('footer');
+      this.$SmoothScroll(target, 3000);
     },
-  },
-  data() {
-    return {
-      contacts: [
-        {
-          icon: 'far fa-comments',
-          label: 'Social',
-          action: 'footer',
-        },
-        {
-          link: '#',
-          icon: 'far fa-user',
-          label: 'Resume',
-        },
-        {
-          link: 'mailto:george@georgey.io',
-          icon: 'far fa-envelope-open',
-          label: 'Email Me',
-        },
-      ],
-    };
   },
 };
 </script>
@@ -127,18 +128,16 @@ export default {
   }
 }
 
-@media  (max-width: 768px) {
-
+@media (max-width: 768px) {
   .intro {
     text-align: left;
   }
 
-  .intro-text, .intro .name {
+  .intro-text,
+  .intro .name {
     max-width: 100%;
     padding: 0px;
     margin: 0px;
-
   }
-
 }
 </style>

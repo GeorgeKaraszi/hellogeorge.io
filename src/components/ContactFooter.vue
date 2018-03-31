@@ -1,9 +1,6 @@
 <template>
   <div class="footer-container">
     <div class="footer-wrapper">
-      <!-- <section class="foot-header">
-        <h3>Get In contact with me</h3>
-      </section> -->
       <section id="footer">
         <ul class="icons">
           <li v-for="contact in contacts" :key="contact.link">
@@ -27,22 +24,22 @@ export default {
       contacts: [
         {
           link: 'https://www.linkedin.com/in/georgekaraszi',
-          icon: 'fa fa-linkedin',
+          icon: 'fab fa-linkedin',
           label: 'Linkedin',
         },
         {
           link: 'https://github.com/GeorgeKaraszi',
-          icon: 'fa fa-github',
+          icon: 'fab fa-github',
           label: 'Github',
         },
         {
           link: 'https://www.facebook.com/george.karaszi',
-          icon: 'fa fa-facebook',
+          icon: 'fab fa-facebook',
           label: 'Facebook',
         },
         {
           link: 'mailto:george@georgey.io',
-          icon: 'fa fa-envelope-o',
+          icon: 'far fa-envelope',
           label: 'Email',
         },
       ],

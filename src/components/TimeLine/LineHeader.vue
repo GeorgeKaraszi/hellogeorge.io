@@ -4,7 +4,7 @@
 
       <div class="master-head">
         <h1 class="page-title">{{ title }}</h1>
-        <p class="scroll-button" onClick="$('.post-wrapper .post:first-child .stem-overlay .icon').click();">Ready to go for a ride?</p>
+        <p class="scroll-button" v-on:click="scrollToElement">Ready to go for a ride?</p>
       </div>
 
     </div>
@@ -15,6 +15,22 @@
 <script>
 export default {
   props: ['title'],
+  methods: {
+    smoothScrollElement(target) {
+      this.$SmoothScroll(target, 1000);
+    },
+    scrollToElement() {
+      const targets = document.querySelectorAll("[data-behavior='process:post']");
+      this.$SmoothScroll(targets[0], 1000);
+
+      for (let i = 0; i < targets.length; i += 1) {
+        ((ind, target, smoothScroll) => {
+          setTimeout(() => {
+            smoothScroll(target, 1000);
+          }, 5000 * ind);
+        })(i, targets[i], this.$SmoothScroll);
+      }
+    },
+  },
 };
 </script>
-

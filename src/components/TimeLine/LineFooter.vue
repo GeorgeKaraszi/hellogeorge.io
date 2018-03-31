@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer section">
+  <footer class="footer section" data-behavior="process:post">
     <div class="section-inner">
 
       <div class="good-bye">
@@ -12,4 +12,3 @@
 <script>
 export default {};
 </script>
-

@@ -25,7 +25,7 @@
                   </a>
                 </li>
                 <li>
-                  <router-link to="/resume" class="social-intro;">
+                  <a href="/static/resume" class="social-intro;">
                     <span class="icon">
                       <i aria-hidden="true" class="far fa-user">
                         <span class="label">Resume</span>
@@ -34,7 +34,7 @@
                         Resume
                       </span>
                     </span>
-                  </router-link>
+                  </a>
                 </li>
                 <li>
                   <a href="mailto:george@georgey.io" class="social-intro;">

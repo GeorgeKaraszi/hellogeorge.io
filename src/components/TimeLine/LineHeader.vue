@@ -23,10 +23,10 @@ export default {
       const targets = document.querySelectorAll("[data-behavior='process:post']");
       this.$SmoothScroll(targets[0], 1000);
 
-      for(var i = 0; i < targets.length; i++) {
-        (function(ind, target, smoothScroll) {
-          setTimeout(function(){
-              smoothScroll(target, 1000);
+      for (let i = 0; i < targets.length; i += 1) {
+        ((ind, target, smoothScroll) => {
+          setTimeout(() => {
+            smoothScroll(target, 1000);
           }, 5000 * ind);
         })(i, targets[i], this.$SmoothScroll);
       }

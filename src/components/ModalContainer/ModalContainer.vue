@@ -38,7 +38,7 @@ export default {
     componentParam: {
       type: Object,
       default: null,
-    }
+    },
   },
   components: {
     TestModal,

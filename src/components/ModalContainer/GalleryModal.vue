@@ -10,12 +10,12 @@ export default {
     componentParam: {
       type: Object,
       required: true,
-    }
+    },
   },
   methods: {
     image() {
-      return this.componentParam['image'];
-    }
+      return this.componentParam.image;
+    },
   },
   data() {
     return {

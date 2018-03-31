@@ -39,20 +39,17 @@ export default {
 
   methods: {
     openLargeImage(image, index) {
-      this.activeModal   = true;
-      this.selectedImage = {
-        image: image,
-        index: index,
-      }
+      this.activeModal = true;
+      this.selectedImage = { image, index };
     },
 
     nextImage(index) {
-      const nextIndex = index % this.images.length
+      const nextIndex = index % this.images.length;
 
       this.selectedImage = {
         image: this.images[nextIndex],
         index: nextIndex,
-      }
+      };
     },
     closeModal() {
       this.activeModal = false;

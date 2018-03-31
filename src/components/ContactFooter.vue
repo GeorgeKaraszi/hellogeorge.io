@@ -38,7 +38,7 @@ export default {
           label: 'Facebook',
         },
         {
-          link: 'mailto:george@georgey.io',
+          link: 'mailto:george@hellogeorge.io',
           icon: 'far fa-envelope',
           label: 'Email',
         },

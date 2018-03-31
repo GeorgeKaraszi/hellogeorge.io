@@ -37,7 +37,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:george@georgey.io" class="social-intro;">
+                  <a href="mailto:george@hellogeorge.io" class="social-intro;">
                     <span class="icon">
                       <i aria-hidden="true" class="far fa-envelope-open">
                         <span class="label">Email Me</span>

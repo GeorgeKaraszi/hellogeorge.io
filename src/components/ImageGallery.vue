@@ -73,13 +73,11 @@ export default {
       component: 'gallery-modal',
       selectedImage: {},
       images: [
+        'static/gallery/speaking_ruby.png',
+        'static/gallery/board_game.png',
+        'static/gallery/climbing_v6.jpg',
         'static/placeholder.png',
         'static/image.jpg',
-        'static/placeholder.png',
-        'static/placeholder.png',
-        'static/placeholder.png',
-        'static/placeholder.png',
-        'static/placeholder.png',
       ],
     };
   },

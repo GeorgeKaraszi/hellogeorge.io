@@ -6,7 +6,7 @@
           <div class="row">
             <div class="intro-text">
               <h1>Hello, I'm
-                <span class="name">George Protacio-Karaszi</span>!
+                <span class="name">George</span>!
               </h1>
               <p>Full Stack Developer</p>
             </div>
@@ -73,6 +73,12 @@ export default {
 #header {
   z-index: 1;
   position: relative;
+
+  background-image: url(../assets/images/header.jpg);
+  background-repeat: no-repeat;
+  background-position: 40% 90%;
+  background-size: cover;
+  background-color: #7bc3d1;
 }
 
 .intro {
@@ -80,12 +86,7 @@ export default {
   width: 100%;
   height: auto;
   padding: 100px 0;
-  text-align: center;
   color: #fff;
-  background: url(../assets/images/placeholder.png) no-repeat center top;
-  background-color: #7bc3d1;
-  background-size: cover;
-  cursor: pointer;
 }
 
 .intro h1 {
@@ -98,6 +99,10 @@ export default {
   margin-right: auto;
   margin-left: 8em;
 }
+
+  .intro .name {
+    font-weight: 600;
+  }
 
 /* Media Queries */
 
@@ -114,9 +119,7 @@ export default {
     font-weight: 500;
     letter-spacing: -1px;
   }
-  .intro .name {
-    font-weight: 600;
-  }
+
   .intro .intro-text p {
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
@@ -128,7 +131,10 @@ export default {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
+  #header {
+    background-position: 25% 90%;
+  }
   .intro {
     text-align: left;
   }
@@ -138,6 +144,12 @@ export default {
     max-width: 100%;
     padding: 0px;
     margin: 0px;
+  }
+}
+
+@media (max-width: 450px) {
+  #header {
+    background-position: center left;
   }
 }
 </style>

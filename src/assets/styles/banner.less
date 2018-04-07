@@ -102,6 +102,21 @@
     .nav li {
       width: 400px;
     }
+
+    .row .nav {
+      margin-left: -8em;
+    }
+
+    /* Adding a left border of 8 px with a different color for each menu item*/
+    .nav li:nth-child(6n + 1) {
+      border-left: 8px solid rgb(174, 78, 1);
+    }
+    .nav li:nth-child(6n + 2) {
+      border-left: 8px solid rgb(191, 117, 20);
+    }
+    .nav li:nth-child(6n + 3) {
+      border-left: 8px solid rgb(13, 111, 150);
+    }
   }
 
   // /* Adapting the font size and width for smaller screns*/
@@ -139,16 +154,7 @@
       margin-left: 1em;
       font-size: 0.8em;
     }
-    /* Adding a left border of 8 px with a different color for each menu item*/
-    .nav li:nth-child(6n + 1) {
-      border-left: 8px solid rgb(174, 78, 1);
-    }
-    .nav li:nth-child(6n + 2) {
-      border-left: 8px solid rgb(191, 117, 20);
-    }
-    .nav li:nth-child(6n + 3) {
-      border-left: 8px solid rgb(13, 111, 150);
-    }
+
     /* make the nav bigger on touch screens */
     .touch .nav a {
       padding: 0.8em;
